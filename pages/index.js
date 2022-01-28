@@ -30,16 +30,24 @@ export default function Home() {
     const id = target.getAttribute("cid");
     if (id == "allPro") {
       const ul = target.getElementsByTagName("ul")[0];
-      if (ul.style.opacity == 0) {
-        ul.style.height = "auto";
+      console.log(ul.style.height);
+      if (ul.style.height == 0 || ul.style.height == "0px") {
         ul.style.opacity = 1;
         ul.style.visibility = "visible";
+        ul.style.height = "auto";
         target.children[0].style.color = "#C8DB04";
-        setDirection(1);
+        const cid = target.children[0].getAttribute("id");
+        if (cid === "allpro") {
+          setDirection(1);
+        } else if (cid === "help") {
+          setDirection(2);
+        } else if (cid === "blogs") {
+          setDirection(3);
+        }
       } else {
-        ul.style.height = 0;
         ul.style.opacity = 0;
         ul.style.visibility = "hidden";
+        ul.style.height = 0;
         target.children[0].style.color = "#fff";
         setDirection(0);
       }
@@ -76,14 +84,9 @@ export default function Home() {
           <div className={styles.head_bottom}>
             {/* <EnvironmentTwoTone /> */}
 
-            <Image
-              src={place1}
-              alt=""
-              width={24}
-              height={22}
-            />
+            <Image src={place1} alt="" width={24} height={22} />
             <span className={styles.location_name}>Cembo, Makati</span>
-            <DownOutline className={styles.down_icon}/>
+            <DownOutline className={styles.down_icon} />
           </div>
         </div>
         <div style={{ height: 1000, background: "lightblue", marginTop: 80 }}>
@@ -91,135 +94,139 @@ export default function Home() {
         </div>
       </div>
       <div id="nav" className={styles.menu_container}>
-        <ul id="firstNav" className={styles.first_class} onClick={handleClick}>
-          <li>
-            <HomeOutlined className={styles.anticon_icon} />
-            <span>Home</span>
-          </li>
-          <li>
-            <TagOutlined className={styles.anticon_icon} />
-            <span>On Sale</span>
-          </li>
-          <li
-            style={{ borderBottom: "none", transition: "all .4s" }}
-            cid="allPro"
+        <div style={{ overflow: "scroll", height: "100%", paddingBottom: 30 }}>
+          <ul
+            id="firstNav"
+            className={styles.first_class}
+            onClick={handleClick}
           >
-            <div className={styles.all_products}>
-              <span>All Products</span>
-              {direction === 0 ? <RightOutlined /> : <UpOutlined />}
-            </div>
-            <ul className={styles.two_class}>
-              <li>
-                <span>Appliances</span>
-              </li>
-              <li>
-                <span>Beauty</span>
-              </li>
-              <li>
-                <span>Department Store</span>
-              </li>
-              <li>
-                <span>Hardware</span>
-              </li>
-              <li>
-                <span>Groceries</span>
-              </li>
-              <li>
-                <span>Pharmacy</span>
-              </li>
-              <li>
-                <span>TOys</span>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <GiftOutlined className={styles.anticon_icon} />
-            <span>eGift Certificates</span>
-          </li>
-        </ul>
-        <ul id="twoNav" className={styles.first_class} onClick={handleClick}>
-          <li>
-            <CrownOutlined className={styles.anticon_icon} />
-            <span>Our Stores</span>
-          </li>
-          <li
-            style={{ borderBottom: "none", transition: "all .4s" }}
-            cid="allPro"
-          >
-            <div className={styles.all_products}>
-              <div>
-                <CustomerServiceOutlined className={styles.anticon_icon} />
-                <span>Support/Get Help</span>
+            <li>
+              <HomeOutlined className={styles.anticon_icon} />
+              <span>Home</span>
+            </li>
+            <li>
+              <TagOutlined className={styles.anticon_icon} />
+              <span>On Sale</span>
+            </li>
+            <li
+              style={{ borderBottom: "none", transition: "all .4s" }}
+              cid="allPro"
+            >
+              <div className={styles.all_products} id="allpro">
+                <span>All Products</span>
+                {direction === 1 ? <UpOutlined /> : <RightOutlined />}
               </div>
-              {direction === 0 ? <RightOutlined /> : <UpOutlined />}
-            </div>
-            <ul className={styles.two_class}>
-              <li>
-                <span>Appliances</span>
-              </li>
-              <li>
-                <span>Beauty</span>
-              </li>
-              <li>
-                <span>Department Store</span>
-              </li>
-              <li>
-                <span>Hardware</span>
-              </li>
-              <li>
-                <span>Groceries</span>
-              </li>
-              <li>
-                <span>Pharmacy</span>
-              </li>
-              <li>
-                <span>TOys</span>
-              </li>
-            </ul>
-          </li>
-          <li
-            style={{ borderBottom: "none", transition: "all .4s" }}
-            cid="allPro"
-          >
-            <div className={styles.all_products}>
-              <div>
-                <ContentOutline className={styles.anticon_icon} />
-                <span>Blogs</span>
+              <ul className={styles.two_class}>
+                <li>
+                  <span>Appliances</span>
+                </li>
+                <li>
+                  <span>Beauty</span>
+                </li>
+                <li>
+                  <span>Department Store</span>
+                </li>
+                <li>
+                  <span>Hardware</span>
+                </li>
+                <li>
+                  <span>Groceries</span>
+                </li>
+                <li>
+                  <span>Pharmacy</span>
+                </li>
+                <li>
+                  <span>TOys</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <GiftOutlined className={styles.anticon_icon} />
+              <span>eGift Certificates</span>
+            </li>
+          </ul>
+          <ul id="twoNav" className={styles.first_class} onClick={handleClick}>
+            <li>
+              <CrownOutlined className={styles.anticon_icon} />
+              <span>Our Stores</span>
+            </li>
+            <li
+              style={{ borderBottom: "none", transition: "all .4s" }}
+              cid="allPro"
+            >
+              <div className={styles.all_products} id="help">
+                <div>
+                  <CustomerServiceOutlined className={styles.anticon_icon} />
+                  <span>Support/Get Help</span>
+                </div>
+                {direction === 2 ? <UpOutlined /> : <RightOutlined />}
               </div>
-              {direction === 0 ? <RightOutlined /> : <UpOutlined />}
-            </div>
-            <ul className={styles.two_class}>
-              <li>
-                <span>Appliances</span>
-              </li>
-              <li>
-                <span>Beauty</span>
-              </li>
-              <li>
-                <span>Department Store</span>
-              </li>
-              <li>
-                <span>Hardware</span>
-              </li>
-              <li>
-                <span>Groceries</span>
-              </li>
-              <li>
-                <span>Pharmacy</span>
-              </li>
-              <li>
-                <span>TOys</span>
-              </li>
-            </ul>
-          </li>
-          <li>
-            {/* <GiftOutlined className={styles.anticon_icon} /> */}
-            <span>Follow us</span>
-          </li>
-        </ul>
-        <ul id="footerNav" className={styles.first_class}>
-          <li>Logout</li>
-        </ul>
+              <ul className={styles.two_class}>
+                <li>
+                  <span>Appliances</span>
+                </li>
+                <li>
+                  <span>Beauty</span>
+                </li>
+                <li>
+                  <span>Department Store</span>
+                </li>
+                <li>
+                  <span>Hardware</span>
+                </li>
+                <li>
+                  <span>Groceries</span>
+                </li>
+                <li>
+                  <span>Pharmacy</span>
+                </li>
+                <li>
+                  <span>TOys</span>
+                </li>
+              </ul>
+            </li>
+            <li
+              style={{ borderBottom: "none", transition: "all .4s" }}
+              cid="allPro"
+            >
+              <div className={styles.all_products} id="blogs">
+                <div>
+                  <ContentOutline className={styles.anticon_icon} />
+                  <span>Blogs</span>
+                </div>
+                {direction === 3 ? <UpOutlined /> : <RightOutlined />}
+              </div>
+              <ul className={styles.two_class}>
+                <li>
+                  <span>Appliances</span>
+                </li>
+                <li>
+                  <span>Beauty</span>
+                </li>
+                <li>
+                  <span>Department Store</span>
+                </li>
+                <li>
+                  <span>Hardware</span>
+                </li>
+                <li>
+                  <span>Groceries</span>
+                </li>
+                <li>
+                  <span>Pharmacy</span>
+                </li>
+                <li>
+                  <span>TOys</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              {/* <GiftOutlined className={styles.anticon_icon} /> */}
+              <span>Follow us</span>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.footer_menu}>Logout</div>
       </div>
     </>
   );
