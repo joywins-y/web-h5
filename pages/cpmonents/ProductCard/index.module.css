@@ -1,0 +1,88 @@
+.product_card_container {
+  width: 100%;
+  padding: 8px;
+}
+.head_img {
+  position: relative;
+  width: 147px;
+  margin: 0 auto;
+}
+.icon_heart {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e40046;
+  border-radius: 50%;
+}
+
+.product_card_container .content {
+  padding-left: 7px;
+  display: flex;
+  flex-direction: column;
+  max-width: 145px;
+  margin: auto;
+}
+
+.product_card_container .content span {
+  margin-top: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.product_card_container .content .variety {
+  font-size: 10px;
+  line-height: 15px;
+}
+.product_card_container .content .price {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.product_card_container .content .title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; */
+  /* 兼容 */
+  position: relative;
+  line-height: 1.3125em;
+  /*设置容器高度为n倍行高就是显示n行*/
+  height: 2.625em;
+  overflow: hidden;
+}
+
+.product_card_container .content .title::after {
+  content: "...";
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  padding-left: 2px;
+}
+
+.product_card_container .btn {
+  display: flex;
+  justify-content: center;
+}
+
+.product_card_container .btn button {
+  width: 152px;
+  height: 34px;
+  background: #84bd00;
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
