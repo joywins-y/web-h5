@@ -1,7 +1,10 @@
 import React from "react";
 import { Swiper, Toast } from "antd-mobile";
 import styles from "./index.module.css";
-import bannerItem1 from "../assets/banner-item1.png";
+import bannerItem1 from "../assets/carousel-img1.png";
+import Breadcrumbs from "./components/Breadcrumbs";
+import { Button } from "antd";
+import Contents from './components/Content';
 
 const Index = () => {
   const images = [bannerItem1];
@@ -21,15 +24,21 @@ const Index = () => {
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         )}
-        {/* {index + 1} */}
       </div>
     </Swiper.Item>
   ));
+
+  const menus = [
+    { link: "/", name: "Previous Page" },
+    { link: "", name: "Blogs" },
+  ];
+
   return (
     <div>
+      <Breadcrumbs menus={menus} />
       <Swiper
         loop
-        // autoplay
+        autoplay
         indicatorProps={{
           style: {
             "--dot-color": "#fff",
@@ -42,6 +51,7 @@ const Index = () => {
       >
         {items}
       </Swiper>
+      <Contents />
     </div>
   );
 };

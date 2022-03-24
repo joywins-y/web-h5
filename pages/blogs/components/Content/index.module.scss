@@ -1,0 +1,61 @@
+.content_box {
+  padding: 16px;
+  & > div img {
+    height: 98px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .article {
+    margin-top: 8px;
+    padding-top: 8px;
+    .head {
+      :global {
+        .date {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 20px;
+          color: #626a6d;
+        }
+        .title {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 24px;
+          color: #212529;
+          margin: 4px 0;
+        }
+        .btn {
+          // width: 116px;
+          height: 23px;
+          background: #e40046;
+          border-radius: 20px;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 4px 8px;
+        }
+      }
+    }
+
+    :global {
+      .text {
+        margin-top: 16px;
+        p {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 22px;
+          text-align: justify;
+          text-indent: 24px;
+          color: #404040;
+        }
+      }
+    }
+  }
+}
