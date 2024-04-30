@@ -250,7 +250,7 @@ import CategoryCard from "./cpmonents/CategoryCard";
 
 import { Divider, Grid } from "antd-mobile";
 
-export default () => {
+const Index = () => {
   return (
     <div
       style={
@@ -397,3 +397,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;

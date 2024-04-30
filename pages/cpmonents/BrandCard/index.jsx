@@ -2,7 +2,7 @@ import rsc from "../../assets/RSC.png";
 import bg1 from "../../assets/bg_rsc.png";
 import styles from "./index.module.css";
 
-export default () => {
+const Index = () => {
   return (
     <>
       <div className={styles.img_box}>
@@ -18,3 +18,5 @@ export default () => {
     </>
   );
 };
+
+export default Index;

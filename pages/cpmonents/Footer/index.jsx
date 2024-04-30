@@ -11,7 +11,7 @@ import {
 } from "@ant-design/icons";
 // import Image from "next/image";
 
-export default () => {
+const Index = () => {
   return (
     <div className={styles.footer_container}>
       <div>
@@ -70,3 +70,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;

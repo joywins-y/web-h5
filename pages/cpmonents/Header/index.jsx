@@ -1,6 +1,8 @@
 import Link from "next/link";
+// import Image from "next/image";
+import { useState } from "react";
 import { useRouter } from "next/router";
-import styles from "./index.module.css";
+import { ContentOutline, DownOutline } from "antd-mobile-icons";
 import {
   CrownOutlined,
   CustomerServiceOutlined,
@@ -13,12 +15,10 @@ import {
   TagOutlined,
   UpOutlined,
 } from "@ant-design/icons";
-import { ContentOutline, DownOutline } from "antd-mobile-icons";
-// import Image from "next/image";
+import styles from "./index.module.css";
 import place1 from "../../../public/place.svg";
-import { useState } from "react";
 
-export default () => {
+const Index = () => {
   const router = useRouter();
   const [direction, setDirection] = useState(0);
   const list = [
@@ -316,3 +316,4 @@ export default () => {
   );
 };
 
+export default Index;

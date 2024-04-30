@@ -2,7 +2,7 @@ import { HeartOutlined } from "@ant-design/icons";
 import { Button } from "antd-mobile";
 import styles from "./index.module.css";
 
-export default () => {
+const Index = () => {
   return (
     <div className={styles.product_card_container}>
       <div className={styles.head_img}>
@@ -20,7 +20,10 @@ export default () => {
         </div>
       </div>
       <div className={styles.content}>
-        <span className={styles.title}>Product Name Here two lines sample Product Name Here two lines sample Product Name Here two lines sample</span>
+        <span className={styles.title}>
+          Product Name Here two lines sample Product Name Here two lines sample
+          Product Name Here two lines sample
+        </span>
         <span className={styles.variety}>3 Variations</span>
         <span className={styles.price}>P 999.00</span>
       </div>
@@ -33,3 +36,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;

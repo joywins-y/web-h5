@@ -1,7 +1,5 @@
-export default () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const Index = () => {
+  return <div></div>;
+};
+
+export default Index;

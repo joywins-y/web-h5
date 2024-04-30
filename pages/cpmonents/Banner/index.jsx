@@ -1,18 +1,13 @@
 import { useRef } from "react";
+import { Button, Swiper } from "antd-mobile";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+// import { Swiper } from "antd-mobile/es/components/swiper/swiper";
 import styles from "./index.module.css";
 import img1 from "../../assets/Image-Middle.png";
 import img2 from "../../assets/Image-Right.png";
-import {
-  LeftCircleOutlined,
-  LeftOutlined,
-  RightCircleOutlined,
-  RightOutlined,
-} from "@ant-design/icons";
 // import Image from "next/image";
-import { Swiper } from "antd-mobile/es/components/swiper/swiper";
-import { Button } from "antd-mobile";
 
-export default () => {
+const Index = () => {
   const ref = useRef(null);
   const imgs = [img1, img2, img1];
   const colors = ["#ace0ff", "#bcffbd", "#e4fabd", "#ffcfac"];
@@ -51,7 +46,7 @@ export default () => {
         height: 224,
         background: "#F6F6F6",
         position: "relative",
-        padding: '16px 0'
+        padding: "16px 0",
       }}
     >
       <div
@@ -74,7 +69,7 @@ export default () => {
             "--dot-size": "8px",
             "--active-dot-size": "8px",
             "--dot-border-radius": "50%",
-            marginTop: 10
+            marginTop: 10,
           },
         }}
         stuckAtBoundary={false}
@@ -118,3 +113,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;
