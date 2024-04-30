@@ -1,0 +1,19 @@
+.breadcrumb_box {
+  height: 19px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 13px;
+  padding-left: 16px;
+  line-height: 19px;
+  a {
+    color: #000;
+  }
+  & > span:last-child a {
+    color: #84bd00;
+  }
+  & > span > span {
+    color: #d3d4da;
+  }
+}
